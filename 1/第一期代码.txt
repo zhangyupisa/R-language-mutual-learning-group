@@ -1,0 +1,13 @@
+Figure1.1散点图代码
+data<-read.csv("R2-1-1.csv",header=TRUE)
+library(ggplot2)
+ggplot(data, aes(A, B)) + ggtitle("R2-20") +
+  xlab("A gene expression") + ylab("B gene expression") +
+  geom_point(aes(color=SIZE), alpha=0.4, size=3) +
+  xlim(-2,3) + ylim(-1,3)
+Figure1.2折线图代码
+data<-read.csv("R2-1-2.csv",header=TRUE)
+ggplot(data, aes(Time, value,shape=SIZE,color=SIZE)) + ggtitle("R2-20") +
+  geom_line(color = "black")+
+  geom_point(size=3)
+ 

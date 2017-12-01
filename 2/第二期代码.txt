@@ -1,0 +1,14 @@
+setwd("F:\\Doctor\\R语言学习\\互助小组\\第二期作业")
+data<-read.csv("R2-2.1.csv",header=TRUE)
+library("ggplot2")
+data$smoke <- as.factor(data$smoke)
+ggplot(data,aes(x=bwt,fill=smoke))+
+         geom_histogram(position="dodge",binwidth = 400,colour = "black")+
+         scale_fill_discrete(labels = c("no","yes"))+
+         xlab("birth weight")+  ggtitle("R2-20")
+
+library("ggplot2")
+ggplot(diamonds,aes(x = carat,y = ..density..,color = color)) + 
+  geom_line(stat = "density") + 
+  theme_bw()+
+  xlab("price") + ggtitle("R2-20")

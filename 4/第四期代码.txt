@@ -1,0 +1,18 @@
+setwd("F:\\Doctor\\R语言学习\\互助小组\\第四期作业")
+library(ggplot2)
+data<-read.csv("R.4-1.csv",header=T)
+ggplot(data, aes( x="",y = value, fill = code)) + 
+  geom_bar(stat = "identity", width = 1) +    
+  coord_polar(theta = "y") + 
+  theme(axis.ticks = element_blank(),
+        legend.title = element_blank(), 
+        legend.position = "top")+
+  xlab ("value")+ ylab ("city")+
+  ggtitle( "R2-20")
+library(lattice)
+ggplot(singer,aes(x=voice.part,y=height,fill=voice.part)) + 
+  geom_boxplot()+ 
+  theme(legend.title = element_blank(), 
+        legend.position = "top")+
+  xlab ("voice.part")+ ylab ("height")+
+  ggtitle( "R2-20") 

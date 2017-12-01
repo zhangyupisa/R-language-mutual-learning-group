@@ -1,0 +1,18 @@
+Figure 3.1
+data<-read.csv("R2-3.1.csv",header=TRUE)
+library("ggplot2")
+library("reshape2")
+library("ggthemes")
+mydata<-melt(data,id.vars="Products",variable.name="Quater",value.name="Index")
+ggplot(mydata,aes(Quater,Index,fill=Products))+
+  geom_bar(stat="identity",position="dodge")+
+  theme_economist() + scale_fill_wsj("rgby")+
+  ggtitle("R2-20")+xlab("Time")
+
+Figure 3.2
+
+library(ggplot2)
+data<-read.csv("R2-3.2.csv",header=T)
+ggplot(data,aes(ÉçÇø,fill=Ì¬¶È))+
+  geom_bar(position='stack')+
+  coord_flip()+ggtitle('R2-20')
