@@ -1,0 +1,35 @@
+Figure 5.1_code
+setwd("F:\\Doctor\\R语言学习\\互助小组\\第5期作业")
+install.packages('fmsb')
+library(fmsb)
+maxmin <- data.frame(
+  mpg=c(21.4, 15),
+  cyl=c(8,4),
+  disp=c(351, 121),
+  hp=c(335,109),
+  drat=c(4.22, 3.54),
+  wt=c(4,2),
+  qsec=c(20,10),
+  vs=c(1, 0),
+  am=c(1,0))
+newdata1 <- mtcars[29:32,1:9]
+newdata2 <- rbind(maxmin,newdata1)
+radarchart(newdata2, axistype=1, seg=2,
+           centerzero = FALSE, title="R2-20",plty=1)
+legend(-2.8,0.5, c("Ford Pantera L","Ferrari Dino", 
+                   "Maserati Bora", "Volvo 142E"), 
+       col = c("black","red","green","blue"), 
+       lty = 1, pch = 20,bty = "n") 
+
+Figure 5.2_code
+install.packages("devtools")
+library(devtools)
+install_github("ricardo-bion/ggradar")
+library("ggplot2")
+library("ggradar")
+data<-read.csv("R2_5_data.csv",header=T)
+ggradar(data,axis.label.size = 5, grid.label.size = 4, 
+        legend.text.size = 10)+ 
+        theme(legend.title = element_blank(), 
+        legend.position = "top")+
+        ggtitle("R2-20")
